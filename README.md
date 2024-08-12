@@ -1,7 +1,10 @@
-<h1 style="text-align: center; display: flex; justify-content: center; align-items: center;">
+<h1 style="text-align: center;">
     Development of a Mobile Interface for Processing Ophthalmic Images
-    <img src="screenshots/screenshot_01.png" alt="screenshot" style="margin-left: 10px; vertical-align: middle;">
 </h1>
+
+&nbsp
+
+<img src="screenshots/screenshot_01.png" width="36" height="36" alt="screenshot">
 
 ###
 
