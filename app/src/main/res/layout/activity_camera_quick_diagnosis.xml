@@ -1,0 +1,228 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".Quick.CameraQuickDiagnosis">
+
+    <!-- Логотип -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="Logo" />
+
+    <!-- Кругле прев'ю зображення -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/preview_card"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="16dp"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circular"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintWidth_percent="0.90">
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/previewView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000"
+            android:clickable="true"
+            android:focusable="true" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Скролюваний контент -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/preview_card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/buttonTakePhoto">
+
+        <!-- Карточка з повзунками -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="#3E3E3E"
+            app:cardCornerRadius="16dp"
+            app:strokeWidth="4dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:id="@+id/sliders_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="2dp">
+
+                <!-- Контрастність -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#3E3E3E"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:layout_marginBottom="4dp">
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Contrast"
+                        android:textColor="#FFFFFF"
+                        android:layout_gravity="center_vertical"/>
+                    <SeekBar
+                        android:id="@+id/seekBarContrast"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:max="100"
+                        android:progress="50"
+                        android:thumbTint="#FFFFFF"
+                        android:progressTint="#FFFFFF"
+                        android:progressBackgroundTint="#FFFFFF"/>
+                </LinearLayout>
+
+                <!-- Яскравість -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#3E3E3E"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:layout_marginBottom="4dp">
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Brightness"
+                        android:textColor="#FFFFFF"
+                        android:layout_gravity="center_vertical"/>
+                    <SeekBar
+                        android:id="@+id/seekBarBrightness"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:max="100"
+                        android:progress="50"
+                        android:thumbTint="#FFFFFF"
+                        android:progressTint="#FFFFFF"
+                        android:progressBackgroundTint="#FFFFFF"/>
+                </LinearLayout>
+
+                <!-- Насиченість -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#3E3E3E"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:layout_marginBottom="4dp">
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Saturation"
+                        android:textColor="#FFFFFF"
+                        android:layout_gravity="center_vertical"/>
+                    <SeekBar
+                        android:id="@+id/seekBarSaturation"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:max="100"
+                        android:progress="50"
+                        android:thumbTint="#FFFFFF"
+                        android:progressTint="#FFFFFF"
+                        android:progressBackgroundTint="#FFFFFF"/>
+                </LinearLayout>
+
+                <!-- Баланс білого -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#3E3E3E"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:layout_marginBottom="4dp">
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="White Bal"
+                        android:textColor="#FFFFFF"
+                        android:layout_gravity="center_vertical"/>
+                    <SeekBar
+                        android:id="@+id/seekBarWhiteBalance"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:max="100"
+                        android:progress="50"
+                        android:thumbTint="#FFFFFF"
+                        android:progressTint="#FFFFFF"
+                        android:progressBackgroundTint="#FFFFFF"/>
+                </LinearLayout>
+
+                <!-- Градація сірого -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#3E3E3E"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:layout_marginBottom="4dp">
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Gray Scale"
+                        android:textColor="#FFFFFF"
+                        android:layout_gravity="center_vertical"/>
+                    <SeekBar
+                        android:id="@+id/seekBarGrayScale"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:max="100"
+                        android:progress="50"
+                        android:thumbTint="#FFFFFF"
+                        android:progressTint="#FFFFFF"
+                        android:progressBackgroundTint="#FFFFFF"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </ScrollView>
+
+    <!-- Кнопка для зйомки фото -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonTakePhoto"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Take Photo"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button_border"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Progress Bar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/buttonTakePhoto"
+        app:layout_constraintTop_toTopOf="@id/buttonTakePhoto" />
+</androidx.constraintlayout.widget.ConstraintLayout>

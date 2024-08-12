@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorAccent">#000000</color>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorBackground">#F0F0F0</color>
+    <color name="buttonTextColor">#FFFFFF</color>
+    <color name="colorText">#000000</color>
+    <color name="colorGray">#808080</color>
+    <color name="colorDarkGray">#A9A9A9</color>
+    <color name="md_grey_white">#FFFFFF</color>
+    <color name="radiobutton_disabled">#FF757575</color>
+    <color name="color_accent">@color/color_primary</color>
+    <color name="color_primary">#FFF57C00</color>
+</resources>

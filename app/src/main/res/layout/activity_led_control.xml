@@ -1,0 +1,159 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#000000"
+    tools:context=".LedControl.LedControlActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LED Control"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/textView2">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ON"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="2dp"
+            android:background="@drawable/button_border"
+            android:textColor="#FFFFFF"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="OFF"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/button_border"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonR"
+        android:layout_width="70dp"
+        android:layout_height="35dp"
+        android:text="R"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button_r"
+        android:layout_below="@+id/linear"
+        android:layout_marginTop="16dp" />
+
+    <SeekBar
+        android:id="@+id/seekBarR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="255"
+        android:layout_below="@+id/buttonR"
+        android:layout_marginTop="8dp"
+        android:progressTint="#FFFFFF"
+        android:thumbTint="#FFFFFF" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonG"
+        android:layout_width="70dp"
+        android:layout_height="35dp"
+        android:text="G"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button_g"
+        android:layout_below="@+id/seekBarR"
+        android:layout_marginTop="16dp" />
+
+    <SeekBar
+        android:id="@+id/seekBarG"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="255"
+        android:layout_below="@+id/buttonG"
+        android:layout_marginTop="8dp"
+        android:progressTint="#FFFFFF"
+        android:thumbTint="#FFFFFF" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonB"
+        android:layout_width="70dp"
+        android:layout_height="35dp"
+        android:text="B"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button_b"
+        android:layout_below="@+id/seekBarG"
+        android:layout_marginTop="16dp" />
+
+    <SeekBar
+        android:id="@+id/seekBarB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="255"
+        android:layout_below="@+id/buttonB"
+        android:layout_marginTop="8dp"
+        android:progressTint="#FFFFFF"
+        android:thumbTint="#FFFFFF" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonW"
+        android:layout_width="70dp"
+        android:layout_height="35dp"
+        android:text="W"
+        android:textColor="#000000"
+        android:background="@drawable/button_w"
+        android:layout_below="@+id/seekBarB"
+        android:layout_marginTop="16dp" />
+
+    <SeekBar
+        android:id="@+id/seekBarW"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="255"
+        android:layout_below="@+id/buttonW"
+        android:layout_marginTop="8dp"
+        android:progressTint="#FFFFFF"
+        android:thumbTint="#FFFFFF" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekBarW"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Disconnect"
+            android:background="@drawable/button_border"
+            android:layout_marginRight="2dp"
+            android:textColor="#FFFFFF"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonNext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Next"
+            android:background="@drawable/button_border"
+            android:layout_marginLeft="2dp"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+</RelativeLayout>
